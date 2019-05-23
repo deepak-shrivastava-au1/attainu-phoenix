@@ -1,6 +1,6 @@
-# Ansal Mon
+# Deepak Shrivastava
 
-[My Resume](resume/resume.pdf)
+[My Resume](Resume/Resume.pdf)
 
 [Assignments](assignments/)
 
