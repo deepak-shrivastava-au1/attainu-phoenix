@@ -87,23 +87,4 @@ class LinkedList {
 
 }
 
-let l = new LinkedList(); 
-l.append("Banglore");
-l.append("Chennai");
-l.append("Varanasi");
-l.append("Mumbai");
-
-l.prepend("Orian Mall");
-l.prepend("Marina Beach");
-l.prepend("Sarnath");
-l.prepend("Local Train");
-
-l.print();
-
-console.log("after Delete");
-//l.delete("Local Train");
-l.delete("Mumbai");
-l.print();
-
-//console.log(l.search("Varanasi"));
-//console.log(l.search("Sarnath"));
+module.exports = LinkedList;

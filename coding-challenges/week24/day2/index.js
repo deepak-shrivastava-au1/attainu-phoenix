@@ -12,14 +12,11 @@ function commanElements(arr1, arr2) {
         for (j = 0; j <= length; j++) {
             if (arr1[i] === arr2[j]) {
                 for (let u = 0; u <= arr.length; u++) {
-                    if ( arr1[i] === arr[u]) {
-                        continue;
-                    }
-                    else {
+                    if ( arr1[i] != arr[u]) {
                         arr.push(arr1[i]);
                     }
-                }
                 
+                 }
             }
         }
     }
@@ -29,7 +26,8 @@ function commanElements(arr1, arr2) {
 
 
 
+
 let a = [2,3,4,4,2,6];
 let b = [3,2,7,6,1,4];
 
-console.log(commanElements(a,b))
+console.log(commanElements(a,b));

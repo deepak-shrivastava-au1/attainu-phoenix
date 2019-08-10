@@ -7,15 +7,13 @@ function subArray(arr) {
 
         total = total + arr[i];
         console.log(total);
-    }
-    for (j = arr.length-2; j >=0; j--){
-    for (let i = 0; i <= j; i++) {
+    for (let j = i; j < arr.length; j++){
         newTotal = newTotal + arr[i];
-    }
-    if (total <= newTotal) {
+    if (total < newTotal) {
         mArr.push(newTotal);
     }
 }
+    }
     
    
      
