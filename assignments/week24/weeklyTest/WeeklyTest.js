@@ -62,7 +62,7 @@ class HashTable {
         let array = data.trim().split("\n");
         console.log(array);
 
-        for (let i = 0; i <= array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             let row = array[i].split(",");
             h.set(row[0], row[1]);
         }
