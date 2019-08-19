@@ -1,3 +1,5 @@
+'use strict';
+
 function concatTwoArray(arr1, arr2) {
     let sortedArray = [];
    while(arr1.length || arr2.length) {
@@ -5,10 +7,10 @@ function concatTwoArray(arr1, arr2) {
        let j = 0;
 
             if (arr1[i] >= arr2[j]) {
-                if(arr2[j] != sortedArray.indexOf(arr2[j])){
+              
                 sortedArray.push(arr2[j]);
                 arr2.shift();
-                }
+                
             }
             else {
                 sortedArray.push(arr1[i]);
