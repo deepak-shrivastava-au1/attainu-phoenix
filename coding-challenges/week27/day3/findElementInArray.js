@@ -7,7 +7,7 @@ function missingNumbers(arr) {
         if (diff != 1) {
             while(arr[i+1] - arr[i] != 1){
                 missingArr.push(arr[i]+1); 
-                arr[i] += 1;
+                arr[i]++;
             }
          }
         else {
