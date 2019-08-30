@@ -3,7 +3,7 @@ function findPairs(x, arr) {
     for (let i = 0; i <= arr.length; i++) {
         for(let j = 0; j <= arr.length; j++) {
             if (arr[i] + arr[j] == x) {
-                if (pairs.includes(arr[i]) || pairs.includes(arr[j])){
+                if (pairs.includes(arr[i])){
                     continue;
                 }
                 else {
