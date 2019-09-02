@@ -1,13 +1,13 @@
 function findPairs(x, arr) {
     let pairs = [];
-    for (let i = 0; i <= arr.length; i++) {
-        for(let j = 0; j <= arr.length; j++) {
+    for (let i = 0; i < arr.length; i++) {
+        for(let j = 0; j < i; j++) {
             if (arr[i] + arr[j] == x) {
                 if (pairs.includes(arr[i])){
                     continue;
                 }
                 else {
-                    pairs.push(arr[i], arr[j]);
+                    pairs.push([arr[i], arr[j]]);
                 }
                 
             }

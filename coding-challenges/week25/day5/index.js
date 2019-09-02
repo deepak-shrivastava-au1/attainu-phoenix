@@ -1,23 +1,28 @@
 function alphaCompress(str) {
+ let compressed = "" ;
+ let previous = str[0];
  let count = 0;
- let arr = [];
- str = str.toLowerCase();
- for (let i = 0; i <= str.length; i++) {
-     for (let j = 0; j <= str.length; j++) {
-         if (str.charCodeAt(i) === str.charCodeAt(j)) {
-             count++;
-         }
-     }
-     if(arr.indexOf(str[i] === -1) {
-         if (count > 1) {
-            arr.push(str[i]);
-            arr.push(count);
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === previous) {
+            count += 1 ;
+            continue;
         }
-        else {
-            arr.push(str[i]);
+        compressed += previous;
+        if(count > 1 ) {
+            compressed += count.toString();
         }
-        }
-     }
+        console.log(compressed);
+        
+        previous = str[i];
+        count = 1;
+    }
+        // for the last charecter
+        compressed += previous;
+            if(count > 1 ) {
+                compressed += count.toString();
+        
+    }
+ return compressed;
  }
 
-console.log(alphaCompress("AADDDLLLL"));
+console.log(alphaCompress("AAADDBLLLL"));
