@@ -16,4 +16,4 @@ function primeNumber(n) {
 
 }
 
-console.log(primeNumber(10));
+console.log(primeNumber(100));
