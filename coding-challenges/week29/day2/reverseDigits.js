@@ -9,9 +9,18 @@ function reverseDigits(n) {
        n = Math.floor(n / 10);
        reverseDigits(n);       
    }
+   if(n < 0) {
+        rem = n % 10;
+      
+        rev = rev * 10 + rem;
+        
+        n = Math.trunc(n / 10);
+        
+        reverseDigits(n);  
+   }
    
     return rev;
 }
 
-console.log(reverseDigits(120));
-//console.log(reverseDigits(1234));
+//console.log(reverseDigits(120));
+console.log(reverseDigits(-1234));
