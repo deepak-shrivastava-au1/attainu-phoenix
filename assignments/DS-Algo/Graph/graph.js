@@ -45,7 +45,10 @@ class GraphVertex  {
         this.edges.delete(edge);
     }
 
-    deleteAllEdges() {}
+    deleteAllEdges() {
+        let edges = this.getEdges();
+        edges.forEach(e => this.deleteEdge(e));
+    }
 
 
     getNeighbors() {
@@ -107,4 +110,6 @@ graph.addVertex(a);
 graph.addVertex(b);
 graph.addVertex(d);
 
+console.log(a.getEdges().map(e => e.toString()));
+a.deleteAllEdges();
 console.log(a.getEdges().map(e => e.toString()));

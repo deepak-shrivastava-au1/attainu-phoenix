@@ -19,4 +19,4 @@ function reverseDigits(n) {
 }
 
 //console.log(reverseDigits(120));
-console.log(reverseDigits(1234));
+console.log(reverseDigits(-1234));
