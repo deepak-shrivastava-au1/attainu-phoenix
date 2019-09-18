@@ -12,18 +12,89 @@ class Graph {
         this.vertices[vertex.value] = vertex;
     }
 
-    getNeighbors(vertex) {}
+    getNeighbors(vertex) {
+        return vertex.getNeighbors();
+    }
 
     getAllVertices() {
-   
+        return Object.values(this.vertices);
     }
-    getAllEdges() {}
+    getAllEdges() {
+        return Object.values(this.edges);
+    }
 
-    addEdge() {}
+    addEdge(edge) {
+        let startVertex = this.getVertexByKey(edge.startVertex.getKey());   
+        let endVertex   = this.getVertexByKey(edge.endVertex.getKey());
 
-    deleteEdge() {}
+        //if vertices are not there
+        if(!startVertex) {
+            this.addVertex(edge.startVertex);
+            startVertex = this.getVertexByKey(edge.startVertex.getKey());
+        }
 
-    reverse() {}
+        if(!endVertex) {
+            this.addVertex(edge.endVertex);
+            endVertex = this.getVertexByKey(edge.endVertex.getKey());
+        }
+
+        this.edges[edge.getKey()] = edge;
+        //add the edges to the vertices
+        if(this.isDirected) {
+            startVertex.addEdge(edge);
+        }else {
+            startVertex.addEdge(edge);
+            endVertex.addEdge(edge);
+        }
+    }
+
+    deleteEdge(edge) {
+
+        delete this.edges[edge.getKey()];
+
+        let startVertex = this.getVertexByKey(edge.startVertex.getKey());   
+        let endVertex   = this.getVertexByKey(edge.endVertex.getKey());
+
+        startVertex.deleteEdge(edge);
+        endVertex.deleteEdge(edge);
+    }
+
+    findEdge(startVertex, endVertex) {
+        let startVertex = this.getVertexByKey(edge.startVertex.getKey());   
+        let endVertex   = this.getVertexByKey(edge.endVertex.getKey());
+        let vertex = startVertex || endVertex;
+
+        if(!vertex) {
+            return null;
+        }
+
+        vertex.findEdge(endVertex);
+    }
+
+    getWeight() {
+         let weight = 0;
+         let edges = this.getAllEdges();
+
+         for(let i = 0; edges.length; i++) {
+             weight += edges[i].weight;
+         }
+
+         return weight;
+    }
+    reverse() {
+        let edges = this.getAllEdges();
+
+        this.getAllEdges().forEach(edge => {
+            this.deleteEdge(edge);
+            
+            edge.reverse();
+            this.addEdge(edge);
+        });
+    }
+
+    getVertexByKey() {
+        return this.vertices[key];
+    }
 
     getAdjacencyMatrix() {}
 
