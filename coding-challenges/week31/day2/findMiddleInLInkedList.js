@@ -98,24 +98,26 @@ class LinkedList {
 
 }
 
-let l = new LinkedList(); 
-l.append("Banglore");
-l.append("Chennai");
-l.append("Varanasi");
-l.append("Mumbai");
+        let l = new LinkedList(); 
+        l.append("Banglore");
+        l.append("Chennai");
+        l.append("Varanasi");
+        l.append("Mumbai");
 
-l.prepend("Orian Mall");
-l.prepend("Marina Beach");
-l.prepend("Sarnath");
-l.prepend("Local Train");
-console.log("Middle of even");
+        l.prepend("Orian Mall");
+        l.prepend("Marina Beach");
+        l.prepend("Sarnath");
+        l.prepend("Local Train");
+        console.log("Middle of even");
 
-l.print();
+        l.print();
 
-console.log("Middle of odd");
-//l.delete("Local Train");
-l.delete("Mumbai"); 
-l.print();
+        console.log("Middle of odd");
+        //l.delete("Local Train");
+        l.delete("Mumbai"); 
+        l.print();
 
-//console.log(l.search("Varanasi"));
-//console.log(l.search("Sarnath"));
+        //console.log(l.search("Varanasi"));
+        //console.log(l.search("Sarnath"));
+
+        module.exports = LinkedList;
